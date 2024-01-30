@@ -21,7 +21,7 @@ def get_paginated_videos_route():
     per_page = request.args.get('per_page', default=10, type=int)
 
     videos = get_paginated_videos(page, per_page)
-    return jsonify(videos)
+    return videos
 
 
 if __name__ == '__main__':

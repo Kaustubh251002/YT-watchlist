@@ -1,6 +1,7 @@
 # app/mongodb_handler.py
 
 from pymongo import MongoClient, UpdateOne
+from bson.json_util import dumps
 import os
 
 
@@ -35,6 +36,6 @@ def get_paginated_videos(page, per_page):
 
     print(videos_cursor)
     # Convert the cursor to a list of videos
-    videos = list(videos_cursor)
+    videos = dumps(list(videos_cursor))
     
     return videos
