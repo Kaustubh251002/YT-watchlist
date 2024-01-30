@@ -34,6 +34,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
     conda activate myenv
     pip install -r requirements.txt
     ```
+- Add your API keys and MONGO uri to the .env file
 - Run the flask server
   
     ```
