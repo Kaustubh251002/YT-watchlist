@@ -45,10 +45,12 @@ def handle_success(response):
     for item in response.get('items', []):
         video_info = {
             'video_id': item['id']['videoId'],
+            'channel_id': item['snippet']['channelId'],
             'title': item['snippet']['title'],
             'description': item['snippet']['description'],
             'publish_datetime': item['snippet']['publishedAt'],
-            'thumbnails': item['snippet']['thumbnails']
+            'thumbnails': item['snippet']['thumbnails'],
+            'channel_title': item['snippet']['channelTitle']
         }
         videos.append(video_info)
         

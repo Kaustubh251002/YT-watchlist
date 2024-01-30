@@ -19,7 +19,7 @@ def save_videos_to_mongodb(videos):
         bulk_operations.append(
             UpdateOne(
                     filter={'video_id': video_id},
-                    update={'$set':{'video_id':video_id, 'title':video['title'], 'description': video['description'], 'publish_datetime':video['publish_datetime'], 'thumbnails':video['thumbnails']}},
+                    update={'$set':{'video_id':video_id, 'title':video['title'], 'description': video['description'], 'publish_datetime':video['publish_datetime'], 'thumbnails':video['thumbnails'], 'channel_id':video['channel_id'],'channel_title':video['channel_title']}},
                     upsert=True
             )    
         )
