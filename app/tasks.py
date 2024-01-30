@@ -11,7 +11,7 @@ def fetch_and_store_videos():
     save_videos_to_mongodb(videos)
     print("VIDEOS INSERTED!!")
 
-# Configure and start the scheduler
+# Configure the scheduler
 scheduler = BackgroundScheduler()
 scheduler.add_job(fetch_and_store_videos, trigger="interval", seconds=10)
 

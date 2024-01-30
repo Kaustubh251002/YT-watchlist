@@ -12,10 +12,8 @@ videos_collection = db['videos']
 
 def save_videos_to_mongodb(videos):
     bulk_operations = []
-    print('SAMPLE VIDEO DATA',videos[0])
     for video in videos:
         video_id = video['video_id']
-        print(video)
         # Use upsert to insert or update based on the video_id
         bulk_operations.append(
             UpdateOne(

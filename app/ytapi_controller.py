@@ -27,8 +27,6 @@ def get_latest_videos(query):
         except Exception as e:
             print (e)
 
-            # <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/search?q=minecraft%26dream%7Csapnap&part=id%2Csnippet&order=date&type=video&maxResults=10&key=AIzaSyA-ShXE0S2uEp3-BqS8Tw6sMw-l2ZKg82g&alt=json returned "The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.". Details: "[{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]">
-            # catch this error
             if e.resp.status in [403, 500, 503]:
                 #Using exponential backoff to wait for a period before retrying
                 wait_time = (2 ** attempt)
