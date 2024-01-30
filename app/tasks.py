@@ -5,7 +5,7 @@ from app.ytapi_controller import get_latest_videos
 from app.mongodb_controller import save_videos_to_mongodb
 
 def fetch_and_store_videos():
-    query = "your_predefined_search_query"
+    query = "minecraft&dream|sapnap"
     videos = get_latest_videos(query)
     save_videos_to_mongodb(videos)
 
